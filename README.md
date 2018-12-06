@@ -1,7 +1,10 @@
 # ossec-agent
 OSSEC剂自动安装脚本-linux系统
 
-执行过程（***为脱敏）：
+#执行过程（***为脱敏）：
+
+
+
 rm -rf /etc/yum.repos.d/wazuh.repo
 
 cat > /etc/yum.repos.d/wazuh.repo <<\EOF
