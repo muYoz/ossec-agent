@@ -2,6 +2,7 @@
 #!/usr/bin/python
 import paramiko
 import threading
+import time
 
 #多线程批量安装
 
@@ -18,6 +19,7 @@ def ssh2(ip,username,passwd,cmd):
                 print o,
         ssh.close()
         print u"主机：%s 账号：%s，密码：%s 已完成install作业" % (ip, username, passwd)
+        time.sleep(2)#发现执行了一半后程序停止，加个睡眠时间给足够反应
     except Exception, e:
         if "Errno 61" in e or "timed out" in e: return
 
