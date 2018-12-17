@@ -48,9 +48,9 @@ def ssh2():
                             print o,
                     ssh.close()
                     print u"主机：%s 账号：%s，密码：%s 已完成install作业" % (ip, username, passwd)
-                    time.sleep(2)
                 except Exception, e:
-                    if "Errno 61" in e or "timed out" in e: return
+                    print e
 
 if __name__== '__main__':
     ssh2()
+    time.sleep(1)
