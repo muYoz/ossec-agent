@@ -18,8 +18,7 @@ def ssh2(ip,username,passwd,cmd):
             for o in out:
                 print o,
         ssh.close()
-        print u"主机：%s 账号：%s，密码：%s 已完成install作业" % (ip, username, passwd)
-        time.sleep(2)#发现执行了一半后程序停止，加个睡眠时间给足够反应
+        print u"主机：%s 账号：%s，密码：%s 已完成install作业" % (ip, username, passwd）
     except Exception, e:
         if "Errno 61" in e or "timed out" in e: return
 
@@ -57,3 +56,4 @@ if __name__=='__main__':
                        'service wazuh-agent restart']  # 你要执行的命令列表
                 a = threading.Thread(target=ssh2, args=(ip, username, passwd, cmd))
                 a.start()
+                time.sleep(1)#发现执行了一半后程序停止，加个睡眠时间给足够反应
